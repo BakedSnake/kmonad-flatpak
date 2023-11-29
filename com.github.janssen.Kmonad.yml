@@ -1,0 +1,31 @@
+app-id: com.github.janssen.Kmonad
+runtime: org.gnome.Platform
+runtime-version: '44' 
+sdk: org.gnome.Sdk
+command: /app/kmonad 
+finish-args:
+  - --share=network
+  - --share=ipc
+  - --device=dri
+  - --socket=x11
+  - --socket=pulseaudio
+  - --filesystem=~/.kmonad:rw
+  - --filesystem=xdg-config:rw
+  - --filesystem=xdg-cache:rw
+  - --filesystem=xdg-data:rw
+  - --talk-name=org.gtk.vfs.*
+  - --filesystem=xdg-run/gvfsd
+  - --filesystem=xdg-run/dconf
+  - --filesystem=~/.config/dconf:ro
+  - --talk-name=ca.desrt.dconf
+  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+modules:
+  - name: kmonad 
+    no-autogen: true
+    buildsystem: simple
+    build-commands:
+      - install -m 0755 kmonad /app/kmonad
+    sources:
+      - type: file
+        url: https://github.com/kmonad/kmonad/releases/download/0.4.2/kmonad 
+        sha256: 54d3f1b56a8fc8f2e7a2cd290d2cbd8892cfc54e1e76fb4cd24769ebf46fe348
