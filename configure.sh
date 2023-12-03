@@ -85,4 +85,5 @@ case $OS in
   Arch) arch_install ;;
   openSUSE) suse_install ;;
   Ubuntu) ubuntu_install ;;
+  Debian) ubuntu_install ;;
 esac

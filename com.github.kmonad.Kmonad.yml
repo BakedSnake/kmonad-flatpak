@@ -1,4 +1,4 @@
-app-id: com.github.janssen.Kmonad
+app-id: com.github.kmonad.Kmonad
 runtime: org.gnome.Platform
 runtime-version: '44' 
 sdk: org.gnome.Sdk
@@ -7,6 +7,7 @@ finish-args:
   - --share=network
   - --share=ipc
   - --device=dri
+  - --device=all
   - --socket=x11
   - --socket=pulseaudio
   - --filesystem=~/.kmonad:rw

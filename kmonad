@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $HOME/.config/kmonad/kmonad.conf
+
+nohup flatpak run com.github.kmonad.Kmonad "$KEYS" $1 2> "$LOG" &
+
